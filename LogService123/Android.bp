@@ -18,19 +18,16 @@ android_app {
     // the build system in pi-dev can't quite handle R.java in kt
     // so we will have a mix of java and kotlin files
     srcs: ["src/**/*.java", "src/**/*.kt", "src/**/I*.aidl",],
-
     resource_dirs: ["res"],
-
     name: "LogService123",
-
     certificate: "platform",
-    
+    platform_apis: true,
     privileged: true,
-
-	sdk_version: "current",
-
+    libs: ["telephony-common"],
     optimize: {
-        enabled: false,
+    optimize: true,
     }
-}
+    }
+
+    
 
